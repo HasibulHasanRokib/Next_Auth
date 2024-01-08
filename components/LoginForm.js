@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { FaFacebookSquare } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 const LoginForm = () => {
 
@@ -71,6 +70,7 @@ const LoginForm = () => {
       </form>
       <hr />
       <button
+          onClick={()=>signIn('google',{callbackUrl:"http://localhost:3000"})}
           type="button"
           className="font-semibold border shadow-sm py-2 text-lg rounded-md hover:opacity-90">
          <span className="flex items-center justify-center gap-3">
@@ -78,15 +78,9 @@ const LoginForm = () => {
           Google
          </span>
         </button>
+
         <button
-          type="button"
-          className="font-semibold border shadow-sm py-2 text-lg rounded-md hover:opacity-90">
-         <span className="flex items-center justify-center gap-3">
-          <FaFacebookSquare size={24} className="text-blue-500"/>
-          Facebook
-          </span>
-        </button>
-        <button
+          onClick={()=>signIn('github',{callbackUrl:"http://localhost:3000"})}
           type="button"
           className="font-semibold border shadow-sm py-2 text-lg rounded-md hover:opacity-90">
          <span className="flex items-center justify-center gap-3">
